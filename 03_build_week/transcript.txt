@@ -1,0 +1,8 @@
+[Day 21: paste a copy of a full terminal session here, showing the full
+cycle:
+  1. A run that escalates to PENDING_meeting_summary.md
+  2. The contents of that pending file
+  3. The edit you made
+  4. Running with --resume
+  5. The final success output / final_summary.json
+]

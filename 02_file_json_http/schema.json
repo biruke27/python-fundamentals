@@ -1,0 +1,7 @@
+{
+  "required": ["summary", "action_items"],
+  "properties": {
+    "summary": {"type": "string", "minLength": 10},
+    "action_items": {"type": "array", "minItems": 1}
+  }
+}
