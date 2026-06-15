@@ -27,8 +27,12 @@ Manual task (do this on paper first):
 def classify_note(note):
     """Return "action item", "decision", or "other" for a single note."""
     # TODO: implement classification logic
-    pass
-
+    if "need" in note or "follow up" in note or "action" in note:
+        return "action item"
+    elif "decided" in note or  "agreed" in note  or "final" in note:
+        return "decision"
+    else:
+        return "other"
 
 def main():
     notes = [
@@ -39,7 +43,21 @@ def main():
 
     # TODO: loop over notes, classify each, print note + classification
     # TODO: count totals per category and print them
+    actions, decisions, others = 0, 0, 0
+    
+    for note in notes:
+        category = classify_note(note)
+        if category == "action item":
+            actions += 1
+        elif category == "decision":
+            decisions += 1
+        else:
+            others += 1
+        print(f"Note: '{note}' | Classification: {category}")
 
+    print(f"\nTotals - Actions: {actions}, Decisions: {decisions}, Others: {others}")
 
 if __name__ == "__main__":
     main()
+
+
