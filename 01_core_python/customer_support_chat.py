@@ -76,6 +76,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-    git status        # see what changed
-git add .
-git commit -m "Day 6: summary_stats.py"
