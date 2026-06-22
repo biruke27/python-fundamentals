@@ -44,6 +44,13 @@ def main():
         "I need a refund immediately. The billing process is broken.",
         "Can you help with billing? I need to update my card details.",
         "This is urgent! My account is locked and I need a response.",
+        "The billing system is down and customers are requesting a refund.",
+        "My account is locked and this is urgent because I cannot access my files.",
+        "I submitted a refund request yesterday but the billing issue still exists.",
+        "This is urgent! The billing team has not responded to my complaint.",
+        "My profile is locked after the latest update and I need help.",
+        "The refund was approved, but the billing statement still shows a charge.",
+        "I am locked out of my account and this situation is becoming urgent."
     ]
 
     # 1. Processing Word Frequencies
@@ -68,3 +75,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    git status        # see what changed
+git add .
+git commit -m "Day 6: summary_stats.py"
