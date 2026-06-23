@@ -22,24 +22,55 @@ Spec (see ../../fundamentals/01_core_python/README.md for full details):
 
 def check_required_fields(data, required_fields):
     # TODO: implement
-    pass
+    for field in required_fields:
+        if field not in data:
+            return False
+    return True
 
 
 def safe_divide(a, b):
     # TODO: implement
-    pass
+    try:
+        ration = a / b
+        return ration
+    except ZeroDivisionError:
+        return "Cannot divide by zero"
 
 
 def parse_note_severity(note_text):
     # TODO: implement
-    pass
+    try: 
+        parts = note_text.split(":")
+        numerical_value = int(parts[1])
+        return numerical_value
+    except ValueError:
+        return 0
+
 
 
 def main():
     # TODO: call check_required_fields with a couple of test dicts
     # TODO: call safe_divide with normal and zero-division inputs
     # TODO: call parse_note_severity with valid and invalid strings
-    pass
+# 1. Testing check_required_fields
+    required = ["id", "title", "severity"]
+    test_dict_valid = {"id": 101, "title": "System Reboot Required", "severity": 3, "user": "admin"}
+    test_dict_invalid = {"id": 102, "title": "Minor Warning"} # Missing 'severity'
+    
+    print("1A. check_required_fields (Valid Match):", check_required_fields(test_dict_valid, required))
+    print("1B. check_required_fields (Missing Key):", check_required_fields(test_dict_invalid, required))
+    print("-" * 50)
+
+    # 2. Testing safe_divide
+    print("2A. safe_divide (Standard Division):", safe_divide(25, 5))
+    print("2B. safe_divide (Zero Division Safety):", safe_divide(25, 0))
+    print("-" * 50)
+
+    # 3. Testing parse_note_severity
+    print("3A. parse_note_severity (Valid Text):", parse_note_severity("priority:3"))
+    print("3B. parse_note_severity (Invalid Text Data):", parse_note_severity("priority:HIGH"))
+    
+    print("\n--- ALL TESTS EXECUTED SUCCESSFULLY ---")
 
 
 if __name__ == "__main__":
